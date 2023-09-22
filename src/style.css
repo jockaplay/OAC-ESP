@@ -1,0 +1,99 @@
+:root {
+    --background-color-darker: #27272a;
+    --background-color: #3f3f46;
+    --font-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+header {
+    height: 50px;
+    background-color: var(--background-color-darker);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 8px;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 100px;
+}
+
+@media (max-width: 720px) {
+    main {
+    padding-top: 20px;
+    flex-direction: column;
+    }
+}
+
+.medidor {
+    width: 15rem;
+    border: solid 2px var(--background-color-darker);
+    border-radius: 7px;
+    color: var(--font-color);
+    overflow: hidden;
+}
+
+.medidor-title {
+    background-color: var(--background-color-darker);
+    padding: 20px 50px;
+}
+
+.medidor-body {
+    display: flex;
+    background-color: var(--background-color);
+    padding: 50px 50px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.conversor {
+    display: flex;
+    width: 15rem;
+    height: 2rem;
+    gap: 5px;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.conversor-button {
+    background-color: var(--background-color-darker);
+    flex: 1;
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+.conversor-button:hover {
+    background-color: #2525298c;
+}
+
+.chart {
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+    width: 15rem;
+}
+
+.side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
