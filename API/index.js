@@ -13,8 +13,8 @@ server.use((req, res, next) => {
 
 server.get('/', (req, res) => {
   return res.send(`
-  <p>Insira 
-  <span style="color: red">/data</span> 
+  <p>Insira
+  <span style="color: red">/data</span>
   com o método <span style="color: green">GET</span> receber os dados e com o método <span style="color: green">PUT</span> para inserir dados.
   <br/><br/>
   Os dados viram no formato .json
