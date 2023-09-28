@@ -1,15 +1,15 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
-#include "DHTesp.h"
+#include <DHT.h>
+#define DHTPIN 2
+#define DHTTYPE DHT11
+DHT dht(DHTPIN, DHTTYPE);
 
 const char* ssid = "R$ 10,00";
 const char* password = "edileneejozivall";
 
-DHTesp dht;
-
 void setup() {
 
-  dht.setup(2, DHTesp::DHT11);
 
   //-------- WiFi Conection ---------//
   Serial.begin(115200);
@@ -27,15 +27,18 @@ void setup() {
   Serial.println(WiFi.localIP());
   Serial.println("Conexão Wi-Fi estabelecida");
 
+  // Init dht
+  dht.begin();
+
 }
 
 
 void loop() {
 
-  String temp = String(dht.getTemperature());
-  String umid = String(dht.getHumidity());
+  float temp = dht.readTemperature();
+  float umid = dht.readHumidity();
 
-  Serial.println("| temperatura: " + temp + " | umidade: " + umid + " |");
+  Serial.println("| temperatura: " + String(temp) + " | umidade: " + String(umid) + " |");
   //-------- Requisição HTTP ---------//
 
   HTTPClient http;
@@ -47,6 +50,7 @@ void loop() {
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   http.POST("");
   http.end();
+
 
   delay(1000);
 }
