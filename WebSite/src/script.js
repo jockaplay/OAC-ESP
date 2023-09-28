@@ -27,7 +27,7 @@ async function run() {
     console.log(infos)
     addData(chart2, `${infos2[0]}`, infos2[0]);
     over(response)
-    await sleep(1000);
+    await sleep(800);
     run()
 }
 function over(response){
