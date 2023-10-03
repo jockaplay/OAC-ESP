@@ -6,6 +6,8 @@ Obs. 1: Consegui programar o ESP32, ele enviar mensagens para a API, e o site j√
 
 Obs. 2: Testamos o mesmo c√≥digo no kit de outra pessoa e funcionou.
 
+[Site](https://sites.ufal.br/efa67aa5ff/)
+
 |Equipe| Turma |
 |:-|:-:|
 |Jockson Mateus da Silva Duarte | Turma A|
